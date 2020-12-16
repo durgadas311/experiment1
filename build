@@ -1,0 +1,8 @@
+#!/bin/bash
+
+build="BUILD=${PWD}/bld"
+if [[ "${*}" == *BUILD=* ]]; then
+	unset build
+fi
+
+make -C cpnet-z80 ${build} "${@}"

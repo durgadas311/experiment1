@@ -1,0 +1,3 @@
+[submodule "cpnet-z80"]
+	path = cpnet-z80
+	url = https://github.com/durgadas311/cpnet-z80.git
