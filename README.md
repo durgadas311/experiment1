@@ -1,7 +1,7 @@
 # experiment1
 Experiment for using submodule of cpnet-z80
 
-=== Background
+### Background
 
 This repo uses a submodule (embedded/linked repo). The simplest way to
 get everything is:
@@ -36,7 +36,7 @@ git config submodule.cpnet-z80.url PRIVATE_URL
 while still allowing the general public at access the repo
 in the manner that is correct for them.
 
-=== Examples
+### Examples
 
 The script "build" shows how to execute a 'make' command in the 'cpnet-z80' repo
 while producing the build results in the 'experiment1' repo.
