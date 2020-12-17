@@ -42,28 +42,39 @@ The submodule 'cpnet-z80' was created initially by:
 ```
 git submodule add https://github.com/durgadas311/cpnet-z80.git
 ```
-This creates the submodule and populates it, and points it to the 'master' branch.
+This creates the submodule and populates it,
+and points it to the latest commit on the 'master' branch.
 
 A different branch can be referenced using the `-b <branch>` option.
 It also appears that the branch can be changed later using:
 ```
 git submodule set-branch -b <branch> cpnet-z80
 ```
+Note that this submodule is local in the 'experiment1' repo at this point,
+and needs to be commited and pushed.
+The current _commit_ in the submodule will be recorded,
+and users (cloners) of this repo will default (in the submodule)
+to that specific commit.
+This effectively provides a "frozen" environment - the submodule
+repo will not change unless you update it (update to new commit, commit and push).
 
 ### Updating a submodule
 
 Because the submodule repo is independent, it may get updated externally
-and need to be refreshed locally. The following command will effectively
+and need to be refreshed locally.
+The following command will effectively
 update the submodule to it's latest commit on the current branch:
 ```
-git submodule update --remote cpnet-z80
+git submodule update --remote --merge cpnet-z80
 ```
 Note that this update is local in the 'experiment1' repo, and needs to be
-commited and pushed. TODO: determine whether a fresh clone uses the stale commit
-or always uses the latest.
+committed and pushed. 
 
-Note that this effectively provides a "frozen" environment - the submodule
-repo will not change unless you update it.
+A warning on use of the "--merge" option if branches have been changed:
+This may cause a merge between distantly-(or un-)related branches and can create
+a mess, let alone may result in conflicts that must be resolved.
+More experimentation is needed on handling such situations and restoring
+synchronization.
 
 ### Examples
 
